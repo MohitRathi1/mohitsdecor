@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cat_1",
+    "name": "Canopy Decorations",
+    "image": "https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=400&h=400&q=80"
+  },
+  {
+    "id": "cat_2",
+    "name": "Car Boot Decoration",
+    "image": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=400&h=400&q=80"
+  },
+  {
+    "id": "cat_3",
+    "name": "Birthday Decoration",
+    "image": "https://images.unsplash.com/photo-1533294160622-d5fece3e080d?auto=format&fit=crop&w=400&h=400&q=80"
+  },
+  {
+    "id": "cat_4",
+    "name": "Decoration for Kids",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?auto=format&fit=crop&w=400&h=400&q=80"
+  },
+  {
+    "id": "cat_5",
+    "name": "Room Decoration",
+    "image": "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=400&h=400&q=80"
+  },
+  {
+    "id": "cat_6",
+    "name": "Premium Decor",
+    "image": "https://images.unsplash.com/photo-1502035618526-642f1b34e531?auto=format&fit=crop&w=400&h=400&q=80"
+  }
+]
