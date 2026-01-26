@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Grand Birthday Setup",
+    "youtubeId": "KtYLpShe8s8",
+    "type": "long",
+    "tag": "Trending"
+  },
+  {
+    "id": 2,
+    "title": "Quick Room Decor",
+    "youtubeId": "FT1J3RGI4N4",
+    "type": "short",
+    "tag": "New"
+  },
+  {
+    "id": 3,
+    "title": "Anniversary Surprise",
+    "youtubeId": "ciLWoj940zg",
+    "type": "long",
+    "tag": "Must Watch"
+  },
+  {
+    "id": 4,
+    "title": "Balloon Art Slow-mo",
+    "youtubeId": "h7whqYXmqKM",
+    "type": "short",
+    "tag": "Viral"
+  }
+]
