@@ -6,6 +6,7 @@ import '../Assets/css/Home.css';
 import carouselData from '../data/carousel.json';
 import categories from '../data/categories.json';
 import products from '../data/products.json';
+import image from '../Assets/img/categories/carousal.png';
 
 const Home = () => {
   return (
@@ -55,7 +56,7 @@ const Home = () => {
           {carouselData.slice(0, 1).map((item, index) => (
             <img 
               key={index}
-              src={item.image} 
+              src={image} 
               alt="Promotion" 
               className="hero-image"
             />
