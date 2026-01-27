@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-// import { Search, Headset, ShoppingCart, User, Star, ChevronRight } from 'lucide-react';
+import {  Headset, ChevronRight } from 'lucide-react';
 import '../Assets/css/Home.css';
 import carouselData from '../data/carousel.json';
 import categories from '../data/categories.json';
-import products from '../data/products.json';
+// import products from '../data/products.json';
 import videoData from '../data/trending_videos.json';
 
 const Home = () => {
