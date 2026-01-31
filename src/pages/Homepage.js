@@ -1,48 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import {  Headset, ChevronRight } from 'lucide-react';
+import { Headset, ChevronRight } from 'lucide-react';
 import '../Assets/css/Home.css';
 import carouselData from '../data/carousel.json';
 import categories from '../data/categories.json';
-// import products from '../data/products.json';
 import videoData from '../data/trending_videos.json';
+import { Link } from 'react-router-dom'; // Ensure Link is imported
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Auto-slide logic
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev === carouselData.length - 1 ? 0 : prev + 1));
-    }, 5000); // Slides every 5 seconds
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <div className="page-wrapper">
-      <header className="main-header">
-        <div className="header-container">
-          <div className="logo-container">
-            <div className="logo-ribbon">
-              <span className="logo-text">Mohit's Decor</span>
-            </div>
-            <p className="logo-tagline">Make your party more colorful</p>
-          </div>          
-          {/* <div className="search-bar-container">
-            <div className="search-input-wrapper">
-              <input type="text" placeholder="Search for decorations..." className="search-input" />
-              <Search className="search-icon" />
-            </div>
-          </div> */}
-          <nav className="header-nav">
-            <div className="nav-item"><Headset className="nav-icon" /><span>Contact</span></div>
-            {/* <div className="nav-item"><ShoppingCart className="nav-icon" /><span>Cart</span></div>
-            <div className="nav-item"><User className="nav-icon" /><span>Signup</span></div> */}
-          </nav>
-        </div>
-      </header>
+      {/* --- Balloon Animation Container --- */}
+      <div className="balloons-container">
+        {[...Array(10)].map((_, i) => (
+          <div key={i} className="balloon"></div>
+        ))}
+      </div>
 
       <main className="content-container">
-        {/* --- Dynamic Auto-Slide Hero Carousel --- */}
         <section className="hero-section">
           {carouselData.map((item, index) => (
             <div 
@@ -50,7 +33,6 @@ const Home = () => {
               className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
             >
               <img 
-                /* Dynamically linking to your local folder by ID */
                 src={require(`../Assets/img/carousel/${item.id}.png`)} 
                 alt={item.title} 
                 className="hero-image"
@@ -66,18 +48,22 @@ const Home = () => {
           ))}
         </section>
 
+        {/* --- Updated Section Title --- */}
         <div className="section-title-group">
-          <h1>Happy Republic day</h1>
-          <p>Proud to be Indian, Celebrate freedom, celebrate India!</p>
+          <h1>Valentine's Special Week</h1>
+          <p>Celebrate Love and Make Memories with your loved once!</p>
         </div>
 
-      {/* --- Categories Section --- */}
-<section className="categories-grid">
-  {categories.map((cat, index) => (
-    <div key={cat.id} className="category-card">
+ <section className="categories-grid">
+  {categories.map((cat) => (
+    <Link 
+      to={`/product/${cat.id}`} 
+      key={cat.id} 
+      className="category-card"
+      style={{ textDecoration: 'none', color: 'inherit' }} // Prevents default link styling
+    >
       <div className="category-image-wrapper">
         <img 
-          /* Dynamically loading local images based on ID */
           src={require(`../Assets/img/categories/${cat.id}.jpg`)} 
           alt={cat.name} 
         />
@@ -86,87 +72,44 @@ const Home = () => {
         </div>
       </div>
       <span className="category-name">{cat.name}</span>
-    </div>
+    </Link>
   ))}
 </section>
 
-
-<div className="section-header">
-  <h2>Trending Videos</h2>
-  <button className="view-all-btn">View All <ChevronRight size={16} /></button>
-</div>
-
-<section className="products-grid">  {/* you can keep same class or rename to video-grid */}
-  {videoData.map((video) => (
-    <div key={video.id} className="product-card">  {/* reuse style or create video-card */}
-      {video.tag && <span className="product-tag">{video.tag}</span>}
-      
-      <div className="product-image-container">
-        {/* YouTube thumbnail – works for both shorts & long videos */}
-        <img
-          src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
-          alt={video.title}
-          className="product-image"
-        />
-        
-        {/* Optional: small play icon overlay */}
-        <div className="play-overlay">
-          ▶
+        <div className="section-header">
+          <h2>Trending Videos</h2>
+          <button className="view-all-btn">View All <ChevronRight size={16} /></button>
         </div>
-      </div>
 
-      <div className="product-info">
-        <div className="product-title-row">
-          <h3 className="product-name">{video.title}</h3>
-          {/* You can add views/likes later if you want */}
-        </div>
-        
-        {/* <div className="price-row" style={{ justifyContent: "flex-start" }}>
-          <span style={{ color: "#ff0000", fontWeight: "bold" }}>
-            {video.type === "short" ? "YouTube Shorts" : "Watch Video"}
-          </span>
-        </div> */}
-      </div>
-
-      {/* Optional link to open video */}
-      <a
-        href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="watch-btn"
-        style={{
-          position: "absolute",
-          inset: 0,
-          textIndent: "-9999px",
-          overflow: "hidden"
-        }}
-      >
-        Watch
-      </a>
-    </div>
-  ))}
-</section>
-        {/* <section className="products-grid">
-          {products.map((item, index) => (
-            <div key={index} className="product-card">
-              {item.tag && <span className="product-tag">{item.tag}</span>}
+        <section className="products-grid">
+          {videoData.map((video) => (
+            <div key={video.id} className="product-card">
+              {video.tag && <span className="product-tag">{video.tag}</span>}
               <div className="product-image-container">
-                <img src={item.image} alt={item.name} className="product-image" />
+                <img
+                  src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
+                  alt={video.title}
+                  className="product-image"
+                />
+                <div className="play-overlay">▶</div>
               </div>
               <div className="product-info">
                 <div className="product-title-row">
-                  <h3 className="product-name">{item.name}</h3>
-                  <div className="product-rating">{item.rating} <Star className="star-icon" /></div>
-                </div>
-                <div className="price-row">
-                  <span className="current-price">₹{item.price}</span>
-                  <span className="old-price">₹{item.originalPrice}</span>
-                  <span className="discount-tag">{item.discount}% Off</span>
+                  <h3 className="product-name">{video.title}</h3>
                 </div>
               </div>
+              <a
+                href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="watch-btn"
+                style={{ position: "absolute", inset: 0, textIndent: "-9999px", overflow: "hidden" }}
+              >
+                Watch
+              </a>
             </div>
           ))}
-        </section> */}
+        </section>
       </main>
 
       <a href="https://wa.me/+918208239407" className="whatsapp-float">

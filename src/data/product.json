@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "name": "Heart Balloon Romantic Decoration",
+    "price": 2299,
+    "originalPrice": 2699,
+    "discount": "14% off",
+    "rating": 5,
+    "reviews": 185,
+    "imageFolder": "1",
+    "imagesCount": 3,
+    "details": [
+      "I Love You Foil",
+      "2 Heart Foil on Balloon Pillar containing 30 Balloons Each",
+      "8 Heart Shape Balloons on Balloon Pillar containing 4 Balloons Each",
+      "70 Balloons on Ceiling"
+    ]
+  }
+]
