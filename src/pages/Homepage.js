@@ -4,7 +4,7 @@ import '../Assets/css/Home.css';
 import carouselData from '../data/carousel.json';
 import categories from '../data/categories.json';
 import videoData from '../data/trending_videos.json';
-import { Link } from 'react-router-dom'; // Ensure Link is imported
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,7 +18,6 @@ const Home = () => {
 
   return (
     <div className="page-wrapper">
-      {/* --- Balloon Animation Container --- */}
       <div className="balloons-container">
         {[...Array(10)].map((_, i) => (
           <div key={i} className="balloon"></div>
@@ -33,9 +32,11 @@ const Home = () => {
               className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
             >
               <img 
-                src={require(`../Assets/img/carousel/${item.id}.png`)} 
+                /* Updated to use Public folder path */
+                src={`/img/carousel/${item.id}.png`} 
                 alt={item.title} 
                 className="hero-image"
+                onError={(e) => { e.target.src = 'https://via.placeholder.com/1200x400?text=Banner+Image'; }}
               />
               <div className="hero-overlay">
                 <div className="hero-content">
@@ -48,33 +49,34 @@ const Home = () => {
           ))}
         </section>
 
-        {/* --- Updated Section Title --- */}
         <div className="section-title-group">
           <h1>Valentine's Special Week</h1>
           <p>Celebrate Love and Make Memories with your loved once!</p>
         </div>
 
- <section className="categories-grid">
-  {categories.map((cat) => (
-    <Link 
-      to={`/product/${cat.id}`} 
-      key={cat.id} 
-      className="category-card"
-      style={{ textDecoration: 'none', color: 'inherit' }} // Prevents default link styling
-    >
-      <div className="category-image-wrapper">
-        <img 
-          src={require(`../Assets/img/categories/${cat.id}.jpg`)} 
-          alt={cat.name} 
-        />
-        <div className="category-card-overlay">
-           <ChevronRight className="cat-arrow" size={16} />
-        </div>
-      </div>
-      <span className="category-name">{cat.name}</span>
-    </Link>
-  ))}
-</section>
+        <section className="categories-grid">
+          {categories.map((cat) => (
+            <Link 
+              to={`/product/${cat.id}`} 
+              key={cat.id} 
+              className="category-card"
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <div className="category-image-wrapper">
+                <img 
+                  /* Updated to use Public folder path */
+                  src={`/img/categories/${cat.id}.jpg`} 
+                  alt={cat.name} 
+                  onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=Category'; }}
+                />
+                <div className="category-card-overlay">
+                   <ChevronRight className="cat-arrow" size={16} />
+                </div>
+              </div>
+              <span className="category-name">{cat.name}</span>
+            </Link>
+          ))}
+        </section>
 
         <div className="section-header">
           <h2>Trending Videos</h2>

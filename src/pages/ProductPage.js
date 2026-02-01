@@ -14,7 +14,7 @@ const ProductPage = () => {
 
     useEffect(() => {
         // Fixed: Use triple equals for comparison
-        const foundProduct = productsData.find(p => p.id = id); 
+        const foundProduct = productsData.find(p => p.id == id); 
         if (foundProduct) {
             setProduct(foundProduct);
             try {
