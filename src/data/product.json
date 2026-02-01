@@ -1,6 +1,6 @@
 [
-  {
-    "id": 1,
+  
+   { "id": 3,
     "name": "Heart Balloon Romantic Decoration",
     "price": 1199,
     "originalPrice": 2100,
@@ -14,6 +14,23 @@
       "2 Heart Foil on Balloon Pillar containing 30 Balloons Each",
       "8 Heart Shape Balloons on Balloon Pillar containing 4 Balloons Each",
       "70 Balloons on Ceiling"
-    ]
-  }
+    ]},
+    
+    { "id": 1,
+    "name": "Grand Birthday Celebration Decoration",
+    "price": 1999,
+    "originalPrice": 2500,
+    "discount": "20% off",
+    "rating": 4.5,
+    "reviews": 250,
+    "imageFolder": "2",
+    "imagesCount": 4,
+    "details": [
+      "Happy Birthday Neon Linght",
+      "Balloon Pillar containing 30 Balloons",
+      "Balloon Circle containing 150 Balloons",
+      "50 Balloons Pairs of 5",
+      "Metalic Gold & Silver Balloons Used For Primiume Look"
+
+    ]}
 ]

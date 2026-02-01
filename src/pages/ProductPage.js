@@ -30,7 +30,7 @@ const ProductPage = () => {
     const handleWhatsAppCustomization = () => {
         const phoneNumber = "+918208239407"; // Ensure country code is included
         const currentUrl = window.location.href;
-        const message = `Hello ShopIchi! I am interested in customizing this product:%0A%0A*Product:* ${product.name}%0A*Price:* ₹${product.price}%0A*Link:* ${currentUrl}`;
+        const message = `Hello Mohit's Decor! I am interested in customizing this product:%0A%0A*Product:* ${product.name}%0A*Price:* ₹${product.price}%0A*Link:* ${currentUrl}`;
         window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
     };
 
@@ -38,7 +38,7 @@ const ProductPage = () => {
     const handleShare = async () => {
         const shareData = {
             title: product.name,
-            text: `Check out this ${product.name} on ShopIchi! Price: ₹${product.price} (${product.discount} off)`,
+            text: `Check out this ${product.name} on Mohit's Decor! Price: ₹${product.price} (${product.discount} off)`,
             url: window.location.href,
         };
 
@@ -167,7 +167,7 @@ const ProductPage = () => {
                         </button>
                     </div>
 
-                    <a href="tel:9455122252" className="text-decoration-none">
+                    <a href="tel:8208239407" className="text-decoration-none">
                         <button className="btn btn-danger btn-lg w-100 py-3 fw-bold mb-3 shadow">
                             Make Enquiry →
                         </button>
