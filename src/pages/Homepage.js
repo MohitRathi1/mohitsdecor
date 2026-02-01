@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Headset, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import '../Assets/css/Home.css';
 import carouselData from '../data/carousel.json';
 import categories from '../data/categories.json';
