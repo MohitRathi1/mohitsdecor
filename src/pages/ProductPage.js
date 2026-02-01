@@ -13,7 +13,7 @@ const ProductPage = () => {
     const isAvailable = selectedCity === "Ichalkaranji";
 
     useEffect(() => {
-        const foundProduct = productsData.find(p => p.id === id);
+        const foundProduct = productsData.find(p => p.id = id);
         if (foundProduct) {
             setProduct(foundProduct);
             try {
