@@ -42,7 +42,7 @@ const Home = () => {
                 <div className="hero-content">
                   <h2 className="hero-offer">{item.offer}</h2>
                   <p className="hero-subtitle">{item.title}</p>
-                  <a href={item.link} className="book-now-btn">Book Now</a>
+                  {/* <a href={item.link} className="book-now-btn">Book Now</a> */}
                 </div>
               </div>
             </div>
