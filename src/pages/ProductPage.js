@@ -13,7 +13,8 @@ const ProductPage = () => {
     const isAvailable = selectedCity === "Ichalkaranji";
 
     useEffect(() => {
-        const foundProduct = productsData.find(p => p.id = id);
+        // Fixed: Use triple equals for comparison
+        const foundProduct = productsData.find(p => p.id == id); 
         if (foundProduct) {
             setProduct(foundProduct);
             try {
@@ -24,6 +25,35 @@ const ProductPage = () => {
             }
         }
     }, [id]);
+
+    // Handle WhatsApp Customization Enquiry
+    const handleWhatsAppCustomization = () => {
+        const phoneNumber = "+918208239407"; // Ensure country code is included
+        const currentUrl = window.location.href;
+        const message = `Hello ShopIchi! I am interested in customizing this product:%0A%0A*Product:* ${product.name}%0A*Price:* ₹${product.price}%0A*Link:* ${currentUrl}`;
+        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    };
+
+    // Handle Native Share (WhatsApp/Socials)
+    const handleShare = async () => {
+        const shareData = {
+            title: product.name,
+            text: `Check out this ${product.name} on ShopIchi! Price: ₹${product.price} (${product.discount} off)`,
+            url: window.location.href,
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                // Fallback for desktop browsers
+                const waMessage = `Check this out: ${product.name} - ${window.location.href}`;
+                window.open(`https://wa.me/?text=${encodeURIComponent(waMessage)}`, '_blank');
+            }
+        } catch (err) {
+            console.log("Error sharing:", err);
+        }
+    };
 
     if (!product) {
         return (
@@ -43,45 +73,55 @@ const ProductPage = () => {
                 {/* Left: Gallery Section */}
                 <div className="col-lg-7">
                     <div className="d-flex flex-column-reverse flex-md-row gap-3">
-                        {/* Thumbnails */}
                         <div className="d-flex flex-md-column gap-2 overflow-auto">
-                            {thumbnails.map((num) => (
-                                <img 
-                                    key={num}
-                                    src={require(`../Assets/img/product/${product.imageFolder}/${num}.png`)}
-                                    alt="thumb"
-                                    className={`img-thumbnail shadow-sm cursor-pointer ${mainImage === require(`../Assets/img/product/${product.imageFolder}/${num}.png`) ? 'border-primary' : ''}`}
-                                    style={{ width: '80px', height: '80px', objectFit: 'cover', cursor: 'pointer' }}
-                                    onClick={() => setMainImage(require(`../Assets/img/product/${product.imageFolder}/${num}.png`))}
-                                />
-                            ))}
+                            {thumbnails.map((num) => {
+                                const thumbSrc = require(`../Assets/img/product/${product.imageFolder}/${num}.png`);
+                                return (
+                                    <img 
+                                        key={num}
+                                        src={thumbSrc}
+                                        alt="thumb"
+                                        className={`img-thumbnail shadow-sm ${mainImage === thumbSrc ? 'border-primary border-2' : ''}`}
+                                        style={{ width: '80px', height: '80px', objectFit: 'cover', cursor: 'pointer' }}
+                                        onClick={() => setMainImage(thumbSrc)}
+                                    />
+                                );
+                            })}
                         </div>
-                        {/* Main Image */}
-                        <div className="flex-grow-1">
+                        <div className="flex-grow-1 position-relative">
                             <img 
                                 src={mainImage} 
                                 alt={product.name} 
                                 className="img-fluid rounded shadow w-100" 
                                 style={{ maxHeight: '550px', objectFit: 'cover' }}
                             />
+                            {/* Share Button Floating over Image */}
+                            <button 
+                                onClick={handleShare}
+                                className="btn btn-light btn-sm position-absolute top-0 end-0 m-3 shadow-sm rounded-circle"
+                                style={{ width: '40px', height: '40px' }}
+                                title="Share Product"
+                            >
+                                🔗
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 {/* Right: Content Section */}
                 <div className="col-lg-5">
-                    <h1 className="fw-bold h2">{product.name}</h1>
+                    <div className="d-flex justify-content-between align-items-start">
+                        <h1 className="fw-bold h2">{product.name}</h1>
+                        <button className="btn btn-outline-dark btn-sm rounded-pill px-3" onClick={handleShare}>
+                            Share
+                        </button>
+                    </div>
                     
                     <div className="d-flex align-items-center gap-3 my-3">
                         <span className="h3 fw-bold mb-0">₹{product.price}</span>
                         <span className="text-muted text-decoration-line-through">₹{product.originalPrice}</span>
                         <span className="badge bg-success">{product.discount}</span>
                     </div>
-
-                    {/* <div className="mb-3">
-                        <span className="text-warning fw-bold">★ {product.rating}</span>
-                        <span className="text-muted ms-2">({product.reviews} reviews)</span>
-                    </div> */}
 
                     <div className="card border-0 bg-light mb-4">
                         <div className="card-body">
@@ -94,22 +134,16 @@ const ProductPage = () => {
                         </div>
                     </div>
 
-                    {/* Location Section with Dropdown */}
+                    {/* Location Section */}
                     <div className="p-3 border rounded mb-4 d-flex justify-content-between align-items-center bg-white shadow-sm">
-                        <div className="dropdown">
-                            <p 
-                                className="mb-0 fw-bold dropdown-toggle cursor-pointer" 
-                                data-bs-toggle="dropdown" 
-                                style={{ cursor: 'pointer' }}
-                            >
+                        <div>
+                            <p className="mb-0 fw-bold dropdown-toggle cursor-pointer" data-bs-toggle="dropdown">
                                 📍 Your City - {selectedCity}
                             </p>
                             <ul className="dropdown-menu shadow">
                                 {availableCities.map((city) => (
                                     <li key={city}>
-                                        <button className="dropdown-item" onClick={() => setSelectedCity(city)}>
-                                            {city}
-                                        </button>
+                                        <button className="dropdown-item" onClick={() => setSelectedCity(city)}>{city}</button>
                                     </li>
                                 ))}
                             </ul>
@@ -122,12 +156,17 @@ const ProductPage = () => {
                         <button className="btn btn-outline-secondary btn-sm" data-bs-toggle="dropdown">Change</button>
                     </div>
 
-                    <div className="whatsapp-box p-3 border border-success rounded bg-light mb-3 d-flex justify-content-between align-items-center">
-                        <p className="mb-0 small fw-bold">Looking for Customized Decor?</p>
-                        <button className="btn btn-success btn-sm px-3">WhatsApp Us</button>
+                    {/* Updated WhatsApp Customization Box */}
+                    <div className="whatsapp-box p-3 border border-success rounded bg-light mb-3 d-flex justify-content-between align-items-center shadow-sm">
+                        <p className="mb-0 small fw-bold text-success">Looking for Customized Decor?</p>
+                        <button 
+                            onClick={handleWhatsAppCustomization}
+                            className="btn btn-success btn-sm px-3 fw-bold"
+                        >
+                            WhatsApp Us
+                        </button>
                     </div>
 
-                    {/* Enquiry Button - Redirects to Phone Call */}
                     <a href="tel:9455122252" className="text-decoration-none">
                         <button className="btn btn-danger btn-lg w-100 py-3 fw-bold mb-3 shadow">
                             Make Enquiry →
@@ -135,7 +174,8 @@ const ProductPage = () => {
                     </a>
                     
                     <p className="text-center text-muted small">
-                        #1 Decoration Website India | In collaboration with 100+ Event Decors                    </p>
+                        #1 Decoration Website India | In collaboration with 100+ Event Decors
+                    </p>
                 </div>
             </div>
         </div>
