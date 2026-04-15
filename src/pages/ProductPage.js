@@ -14,8 +14,10 @@ const ProductPage = () => {
     const isAvailable = selectedCity === "Ichalkaranji";
 
     useEffect(() => {
+        const productId = Number(id);
         // Fixed: Use triple equals for comparison
-        const foundProduct = productsData.find(p => p.id === id); 
+        //this =, ==, === is cousing issue in finding product, it should be === instead of =, my logic is working only in == 
+        const foundProduct = productsData.find(p => p.id === productId); 
         console.log("Found Product:", foundProduct);
         if (foundProduct) {
             setProduct(foundProduct);
