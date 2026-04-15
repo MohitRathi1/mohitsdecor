@@ -14,7 +14,25 @@
       "Balloon Pillar containing 30 Balloons",
       "Balloon Circle containing 150 Balloons",
       "50 Balloons Pairs of 5",
-      "Metalic Gold & Silver Balloons Used For Primiume Look"
+      "Metalic Gold & Silver Balloons Used For Primiume Look",
+            "Balloons and props canbe changed according to theme"
 
+
+    ]},
+    { "id": 3,
+    "name": "Red Room Decor ",
+    "price": 1199,
+    "originalPrice": 2500,
+    "discount": "52% off",
+    "rating": 4.8,
+    "reviews": 180,
+    "imageFolder": "3",
+    "imagesCount": 3,
+    "details": [
+      "Balloon Pillar containing 30 Balloons",
+      "Balloon arch containing 150 Balloons",
+      "50 Balloons Pairs of 5",
+      "With combination of any two colors balloon decor",
+      "Balloons and props canbe changed according to theme"
     ]}
 ]

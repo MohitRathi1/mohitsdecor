@@ -4,6 +4,7 @@ import productsData from '../data/product.json';
 
 const ProductPage = () => {
     const { id } = useParams();
+    console.log("Product ID from URL:", id);
     const [product, setProduct] = useState(null);
     const [mainImage, setMainImage] = useState("");
     
@@ -14,7 +15,8 @@ const ProductPage = () => {
 
     useEffect(() => {
         // Fixed: Use triple equals for comparison
-        const foundProduct = productsData.find(p => p.id = id); 
+        const foundProduct = productsData.find(p => p.id == id); 
+        console.log("Found Product:", foundProduct);
         if (foundProduct) {
             setProduct(foundProduct);
             try {
@@ -25,12 +27,13 @@ const ProductPage = () => {
             }
         }
     }, [id]);
+        const currentUrl ="https://mohitsdecor.vercel.app/product/" + id;
 
     // Handle WhatsApp Customization Enquiry
     const handleWhatsAppCustomization = () => {
         const phoneNumber = "+918208239407"; // Ensure country code is included
-        const currentUrl = window.location.href;
-        const message = `Hello Mohit's Decor! I am interested in customizing this product:%0A%0A*Product:* ${product.name}%0A*Price:* ₹${product.price}%0A*Link:* ${currentUrl}`;
+        const currentUrl ="https://mohitsdecor.vercel.app/product/" + id;
+        const message = `Hello Mohit's Decor! I am interested in this %0ADecor: ${product.name}%0A%0A ${currentUrl}`;
         window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
     };
 
@@ -38,8 +41,7 @@ const ProductPage = () => {
     const handleShare = async () => {
         const shareData = {
             title: product.name,
-            text: `Check out this ${product.name} on Mohit's Decor! Price: ₹${product.price} (${product.discount} off)`,
-            url: window.location.href,
+            url: currentUrl,
         };
 
         try {
