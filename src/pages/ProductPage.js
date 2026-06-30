@@ -24,12 +24,7 @@ const ProductPage = () => {
         console.log("Found Product:", foundProduct);
         if (foundProduct) {
             setProduct(foundProduct);
-            try {
-                const initialImg = require(`../Assets/img/product/${foundProduct.imageFolder}/1.png`);
-                setMainImage(initialImg);
-            } catch (err) {
-                console.error("Image not found", err);
-            }
+            setMainImage(`/img/product/${foundProduct.imageFolder}/1.png`);
         }
     }, [id]);
         const currentUrl ="https://mohitsdecor.vercel.app/product/" + id;
@@ -75,13 +70,8 @@ const ProductPage = () => {
 
     
 
-    const tryRequire = (path) => {
-        try { return require(path); } catch (e) { return null; }
-    };
-
     const thumbnails = Array.from({ length: product.imagesCount }, (_, i) => i + 1)
-        .map(num => ({ num, src: tryRequire(`../Assets/img/product/${product.imageFolder}/${num}.png`) }))
-        .filter(t => t.src !== null);
+        .map(num => ({ num, src: `/img/product/${product.imageFolder}/${num}.png` }));
 
     const ogImage = `${BASE_URL}/img/product/${product.imageFolder}/1.png`;
     const ogUrl = `${BASE_URL}/product/${product.id}`;
@@ -119,6 +109,7 @@ const ProductPage = () => {
                                     className={`img-thumbnail shadow-sm ${mainImage === src ? 'border-primary border-2' : ''}`}
                                     style={{ width: '80px', height: '80px', objectFit: 'cover', cursor: 'pointer' }}
                                     onClick={() => setMainImage(src)}
+                                    onError={e => { e.target.style.display = 'none'; }}
                                 />
                             ))}
                         </div>

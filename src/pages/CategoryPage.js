@@ -4,13 +4,7 @@ import categoriesData from '../data/categories.json';
 import productsData from '../data/product.json';
 
 const ProductCard = ({ product }) => {
-  let imgSrc = null;
-  try {
-    imgSrc = require(`../Assets/img/product/${product.imageFolder}/1.png`);
-  } catch (e) {
-    imgSrc = null;
-  }
-
+  const imgSrc = `/img/product/${product.imageFolder}/1.png`;
   const stars = '★'.repeat(Math.floor(product.rating)) + '☆'.repeat(5 - Math.floor(product.rating));
 
   return (
@@ -29,20 +23,15 @@ const ProductCard = ({ product }) => {
           }}
         >
           <div style={{ height: '200px', overflow: 'hidden', background: '#f3f4f6' }}>
-            {imgSrc ? (
-              <img
-                src={imgSrc}
-                alt={product.name}
-                className="w-100 h-100"
-                style={{ objectFit: 'cover', transition: 'transform 0.3s' }}
-                onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
-                onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
-              />
-            ) : (
-              <div className="d-flex align-items-center justify-content-center h-100 text-muted small">
-                No Image
-              </div>
-            )}
+            <img
+              src={imgSrc}
+              alt={product.name}
+              className="w-100 h-100"
+              style={{ objectFit: 'cover', transition: 'transform 0.3s' }}
+              onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+              onError={e => { e.target.src = '/img/placeholder.png'; e.target.onerror = null; }}
+            />
           </div>
 
           <div className="card-body p-3">
