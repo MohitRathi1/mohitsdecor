@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import productsData from '../data/product.json';
+
+const BASE_URL = 'https://mohitsdecor.vercel.app';
 
 const ProductPage = () => {
     const { id } = useParams();
@@ -69,36 +72,72 @@ const ProductPage = () => {
         );
     }
 
-    const thumbnails = Array.from({ length: product.imagesCount }, (_, i) => i + 1);
+
+    
+
+    const tryRequire = (path) => {
+        try { return require(path); } catch (e) { return null; }
+    };
+
+    const thumbnails = Array.from({ length: product.imagesCount }, (_, i) => i + 1)
+        .map(num => ({ num, src: tryRequire(`../Assets/img/product/${product.imageFolder}/${num}.png`) }))
+        .filter(t => t.src !== null);
+
+    const ogImage = `${BASE_URL}/img/product/${product.imageFolder}/1.png`;
+    const ogUrl = `${BASE_URL}/product/${product.id}`;
+    const ogTitle = `${product.name} | Mohit's Decor`;
+    const ogDescription = product.details.slice(0, 2).join(' · ');
 
     return (
+        <>
+        <Helmet>
+            <title>{ogTitle}</title>
+            <meta property="og:type" content="product" />
+            <meta property="og:title" content={ogTitle} />
+            <meta property="og:description" content={ogDescription} />
+            <meta property="og:image" content={ogImage} />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+            <meta property="og:url" content={ogUrl} />
+            <meta property="og:site_name" content="Mohit's Decor" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={ogTitle} />
+            <meta name="twitter:description" content={ogDescription} />
+            <meta name="twitter:image" content={ogImage} />
+        </Helmet>
         <div className="container my-5">
             <div className="row g-4">
                 {/* Left: Gallery Section */}
                 <div className="col-lg-7">
                     <div className="d-flex flex-column-reverse flex-md-row gap-3">
                         <div className="d-flex flex-md-column gap-2 overflow-auto">
-                            {thumbnails.map((num) => {
-                                const thumbSrc = require(`../Assets/img/product/${product.imageFolder}/${num}.png`);
-                                return (
-                                    <img 
-                                        key={num}
-                                        src={thumbSrc}
-                                        alt="thumb"
-                                        className={`img-thumbnail shadow-sm ${mainImage === thumbSrc ? 'border-primary border-2' : ''}`}
-                                        style={{ width: '80px', height: '80px', objectFit: 'cover', cursor: 'pointer' }}
-                                        onClick={() => setMainImage(thumbSrc)}
-                                    />
-                                );
-                            })}
+                            {thumbnails.map(({ num, src }) => (
+                                <img
+                                    key={num}
+                                    src={src}
+                                    alt="thumb"
+                                    className={`img-thumbnail shadow-sm ${mainImage === src ? 'border-primary border-2' : ''}`}
+                                    style={{ width: '80px', height: '80px', objectFit: 'cover', cursor: 'pointer' }}
+                                    onClick={() => setMainImage(src)}
+                                />
+                            ))}
                         </div>
                         <div className="flex-grow-1 position-relative">
-                            <img 
-                                src={mainImage} 
-                                alt={product.name} 
-                                className="img-fluid rounded shadow w-100" 
-                                style={{ maxHeight: '550px', objectFit: 'cover' }}
-                            />
+                            {mainImage ? (
+                                <img
+                                    src={mainImage}
+                                    alt={product.name}
+                                    className="img-fluid rounded shadow w-100"
+                                    style={{ maxHeight: '550px', objectFit: 'cover' }}
+                                />
+                            ) : (
+                                <div
+                                    className="rounded shadow w-100 d-flex align-items-center justify-content-center bg-light text-muted"
+                                    style={{ maxHeight: '550px', height: '350px' }}
+                                >
+                                    No Image Available
+                                </div>
+                            )}
                             {/* Share Button Floating over Image */}
                             <button 
                                 onClick={handleShare}
@@ -183,6 +222,7 @@ const ProductPage = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 

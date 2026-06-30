@@ -1,38 +1,198 @@
 [
-    
-    { "id": 1,
-    "name": "Grand Birthday Celebration Decoration",
-    "price": 1999,
-    "originalPrice": 2500,
-    "discount": "20% off",
-    "rating": 4.5,
-    "reviews": 250,
-    "imageFolder": "1",
-    "imagesCount": 3,
-    "details": [
-      "Happy Birthday Neon Linght",
-      "Balloon Pillar containing 30 Balloons",
-      "Balloon Circle containing 150 Balloons",
-      "50 Balloons Pairs of 5",
-      "Metalic Gold & Silver Balloons Used For Primiume Look",
-            "Balloons and props canbe changed according to theme"
-
-
-    ]},
-    { "id": 3,
-    "name": "Red Room Decor ",
-    "price": 1199,
-    "originalPrice": 2500,
-    "discount": "52% off",
-    "rating": 4.8,
-    "reviews": 180,
-    "imageFolder": "3",
-    "imagesCount": 3,
-    "details": [
-      "Balloon Pillar containing 30 Balloons",
-      "Balloon arch containing 150 Balloons",
-      "50 Balloons Pairs of 5",
-      "With combination of any two colors balloon decor",
-      "Balloons and props canbe changed according to theme"
-    ]}
+    {
+        "id": 1,
+        "name": "Grand Birthday Celebration Decoration",
+        "category": "Birthday Decoration, Hotel Decoration, First Birthday Decoration, Canopy Decoration",
+        "price": 1999,
+        "originalPrice": 2500,
+        "discount": "20% off",
+        "rating": 4.5,
+        "reviews": 250,
+        "imageFolder": "1",
+        "imagesCount": 3,
+        "details": [
+            "Happy Birthday Neon Light",
+            "Balloon Pillar containing 30 Balloons",
+            "Balloon Circle containing 150 Balloons",
+            "50 Balloons Pairs of 5",
+            "Metalic Gold & Silver Balloons Used For Premium Look",
+            "Balloons and props can be changed according to theme"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Outdoor Balloon Decor",
+        "category": "Canopy Decoration, Birthday Decoration, Anniversary Decoration, Party Decor",
+        "price": 1499,
+        "originalPrice": 1999,
+        "discount": "25% off",
+        "rating": 4.3,
+        "reviews": 120,
+        "imageFolder": "2",
+        "imagesCount": 3,
+        "details": [
+            "Balloon Arch for Outdoor Events",
+            "Colorful Balloons for Festive Look",
+            "Durable Materials for Long Lasting Fun"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Red Room Decor",
+        "category": "Birthday Decoration, Hotel Decor, First Birthday Decor, Canopy Decoration",
+        "price": 1199,
+        "originalPrice": 2500,
+        "discount": "52% off",
+        "rating": 4.8,
+        "reviews": 180,
+        "imageFolder": "3",
+        "imagesCount": 3,
+        "details": [
+            "Balloon Pillar containing 30 Balloons",
+            "Balloon Arch containing 150 Balloons",
+            "50 Balloons Pairs of 5",
+            "With combination of any two colors balloon decor",
+            "Balloons and props can be changed according to theme"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Baby Boy Welcome Decoration",
+        "category": "Baby Welcome Decoration, Welcome Baby Decor",
+        "price": 1799,
+        "originalPrice": 2299,
+        "discount": "22% off",
+        "rating": 4.7,
+        "reviews": 210,
+        "imageFolder": "4",
+        "imagesCount": 1,
+        "details": [
+            "Pastel Pink & Blue Balloon Garland",
+            "Its a Boy / Its a Girl Banner",
+            "Floral Backdrop with Soft Draping",
+            "Star & Heart Foil Balloons",
+            "Custom Name Board on Request",
+            "Setup includes 200+ Balloons"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "First Birthday Crown Theme",
+        "category": "First Birthday Decoration, Birthday Decoration",
+        "price": 2199,
+        "originalPrice": 2799,
+        "discount": "21% off",
+        "rating": 4.9,
+        "reviews": 315,
+        "imageFolder": "5",
+        "imagesCount": 3,
+        "details": [
+            "Giant Number '1' Foil Balloon",
+            "Crown Themed Backdrop",
+            "Gold & White Balloon Arch",
+            "Personalized Birthday Banner",
+            "Table Centerpiece with Mini Balloons",
+            "Matching Color Ribbon & Streamers"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Romantic Anniversary Decor",
+        "category": "Anniversary Decoration, Hotel Decor, Room Decoration",
+        "price": 1599,
+        "originalPrice": 1999,
+        "discount": "20% off",
+        "rating": 4.6,
+        "reviews": 145,
+        "imageFolder": "6",
+        "imagesCount": 3,
+        "details": [
+            "Red & Gold Balloon Ceiling Canopy",
+            "Heart Shaped Foil Balloon Cluster",
+            "Rose Petal Floor Spread",
+            "LED Fairy Light Curtain Backdrop",
+            "Personalized Couple Name Board",
+            "Complimentary Welcome Card"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Welcome Home Baby Decoration",
+        "category": "Welcome Baby Decor, Baby Shower Decoration",
+        "price": 999,
+        "originalPrice": 1399,
+        "discount": "29% off",
+        "rating": 4.4,
+        "reviews": 98,
+        "imageFolder": "7",
+        "imagesCount": 3,
+        "details": [
+            "Welcome Home Banner",
+            "Pastel Balloon Bunch at Entrance",
+            "Door Hanging Decoration",
+            "Soft Tulle Bow Accents",
+            "Baby Footprint Props",
+            "Quick 30-minute Setup"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Princess Theme Birthday Decor",
+        "category": "Birthday Decoration, First Birthday Decoration, Party Decor",
+        "price": 2499,
+        "originalPrice": 2999,
+        "discount": "17% off",
+        "rating": 4.8,
+        "reviews": 275,
+        "imageFolder": "8",
+        "imagesCount": 3,
+        "details": [
+            "Pink & Purple Balloon Arch",
+            "Princess Crown Backdrop",
+            "Glitter Foil Fringe Curtain",
+            "Tiara Photo Booth Props",
+            "Personalized Name Bunting",
+            "Fairy Tale Floral Centerpieces"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Jungle Safari Baby Shower",
+        "category": "Baby Shower Decoration, Birthday Decoration, Party Decor",
+        "price": 1899,
+        "originalPrice": 2399,
+        "discount": "21% off",
+        "rating": 4.5,
+        "reviews": 162,
+        "imageFolder": "9",
+        "imagesCount": 3,
+        "details": [
+            "Green & Brown Balloon Garland",
+            "Animal Print Foil Balloons",
+            "Jungle Leaf Backdrop",
+            "Safari Animal Cutout Props",
+            "Wild One Banner",
+            "Wooden Crate Centerpiece"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Luxury Canopy Balloon Ceiling",
+        "category": "Canopy Decoration, Birthday Decoration, Anniversary Decoration, Hotel Decoration",
+        "price": 3499,
+        "originalPrice": 4499,
+        "discount": "22% off",
+        "rating": 4.9,
+        "reviews": 88,
+        "imageFolder": "10",
+        "imagesCount": 3,
+        "details": [
+            "500+ Ceiling Balloons",
+            "Premium Metallic & Chrome Balloons",
+            "Full Room Coverage",
+            "LED String Lights Integrated",
+            "Custom Color Theme Available",
+            "Professional 2-Hour Setup Included"
+        ]
+    }
 ]

@@ -7,8 +7,10 @@
   --primary-red: #e11d48; /* Main Romantic Red */
   --secondary-pink: #fb7185; /* Light Pink */
   --accent-dark-red: #9f1239; /* Deep Crimson */
-  --bg-gradient-top: #ffe4e6;
-  --bg-gradient-bottom: #fecdd3;
+  --bg-gradient-top: #dae9fe;
+  --bg-gradient-bottom: #fdd0ea;
+  --Baby-boy:#93c5fd;
+  --Baby-girl:#f9a8d4;
 }
 .hero-subtitle {
   font-size: 1.2rem;
@@ -25,7 +27,7 @@
 
 .page-wrapper {
   min-height: 100vh;
-  background: linear-gradient(180deg, var(--bg-gradient-top) 0%, #ffffff 50%, var(--bg-gradient-bottom) 100%);
+  background: linear-gradient(90deg, var(--bg-gradient-top) 0%, #ffffff 50%, var(--bg-gradient-bottom) 100%);
   font-family: 'Quicksand', sans-serif;
   color: var(--text-main);
   position: relative;
@@ -48,7 +50,7 @@
   bottom: -100px;
   width: 30px;
   height: 40px;
-  background: var(--primary-red);
+  background: var(--Baby-boy);
   border-radius: 50%;
   opacity: 0.5;
   animation: floatUp 15s linear infinite;
@@ -56,7 +58,8 @@
 
 /* Different sizes and colors for variety */
 .balloon:nth-child(2n) { 
-  background: var(--secondary-pink); 
+  /* using both colors */
+  background: var(--Baby-girl); 
   width: 40px; 
   height: 50px; 
 }
@@ -100,8 +103,9 @@
   font-family: 'Dancing Script', cursive;
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(to right, var(--primary-red), var(--secondary-pink), var(--accent-dark-red)); 
+  background: linear-gradient(to right, var(--primary-red), var(--secondary-pink), var(--accent-dark-red));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -193,8 +197,13 @@
   font-family: 'Dancing Script', cursive;
   font-size: 2.2rem;
   font-weight: 1000;
-  background: linear-gradient(to right, var(--accent-dark-red), var(--primary-red), var(--secondary-pink)); 
+}
+
+.title-gradient-text,
+.cycling-word {
+  background: linear-gradient(to right, #60a5fa, #c084fc, #be185d);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -203,6 +212,22 @@
   font-style: italic;
   font-weight: 500;
   color: var(--text-muted);
+}
+
+.cycling-word {
+  display: inline-block;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  vertical-align: middle;
+}
+
+.word-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.word-hidden {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
 /* --- CATEGORIES --- */

@@ -6,14 +6,29 @@ import categories from '../data/categories.json';
 import videoData from '../data/trending_videos.json';
 import { Link } from 'react-router-dom';
 
+const cyclingWords = ['Shower', 'Welcome', 'First Birthday'];
+
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [wordVisible, setWordVisible] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev === carouselData.length - 1 ? 0 : prev + 1));
     }, 5000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordVisible(false);
+      setTimeout(() => {
+        setWordIndex((prev) => (prev + 1) % cyclingWords.length);
+        setWordVisible(true);
+      }, 400);
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -27,14 +42,14 @@ const Home = () => {
       <main className="content-container">
         <section className="hero-section">
           {carouselData.map((item, index) => (
-            <div 
-              key={item.id} 
+            <div
+              key={item.id}
               className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+              style={{ backgroundColor: item.bg || '#ffe6f0' }}
             >
-              <img 
-                /* Updated to use Public folder path */
-                src={`/img/carousel/${item.id}.png`} 
-                alt={item.title} 
+              <img
+                src={`/img/carousel/${item.id}.png`}
+                alt={item.title}
                 className="hero-image"
                 onError={(e) => { e.target.src = 'https://via.placeholder.com/1200x400?text=Banner+Image'; }}
               />
@@ -42,7 +57,6 @@ const Home = () => {
                 <div className="hero-content">
                   <h2 className="hero-offer">{item.offer}</h2>
                   <p className="hero-subtitle">{item.title}</p>
-                  {/* <a href={item.link} className="book-now-btn">Book Now</a> */}
                 </div>
               </div>
             </div>
@@ -50,27 +64,32 @@ const Home = () => {
         </section>
 
         <div className="section-title-group">
-          <h1>Valentine's Special Week</h1>
-          <p>Celebrate Love and Make Memories with your loved once!</p>
+          <h1>
+            <span className="title-gradient-text">Baby </span>
+            <span className={`cycling-word ${wordVisible ? 'word-visible' : 'word-hidden'}`}>
+              {cyclingWords[wordIndex]}
+            </span>
+            <span className="title-gradient-text"> Specials</span>
+          </h1>
+          <p>Welcome the little one with decor as sweet as the moment!</p>
         </div>
 
         <section className="categories-grid">
           {categories.map((cat) => (
-            <Link 
-              to={`/product/${cat.id}`} 
-              key={cat.id} 
+            <Link
+              to={`/categoryid/${cat.id}`}
+              key={cat.id}
               className="category-card"
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
               <div className="category-image-wrapper">
-                <img 
-                  /* Updated to use Public folder path */
-                  src={`/img/categories/${cat.id}.jpg`} 
-                  alt={cat.name} 
+                <img
+                  src={`/img/categories/${cat.id}.jpg`}
+                  alt={cat.name}
                   onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=Category'; }}
                 />
                 <div className="category-card-overlay">
-                   <ChevronRight className="cat-arrow" size={16} />
+                  <ChevronRight className="cat-arrow" size={16} />
                 </div>
               </div>
               <span className="category-name">{cat.name}</span>
@@ -120,6 +139,7 @@ const Home = () => {
         </svg>
       </a>
     </div>
+    
   );
 };
 

@@ -1,0 +1,32 @@
+[
+   { "id": 1,
+    "CustomerName": "Prajyot Chougule",
+    "Review": "His work is awesome our all family is happy for his work thank you so much ❤️",
+    "Rating": 4
+   },
+   
+   { "id": 2,
+    "CustomerName": "Ashutosh Darak",
+    "Review": "Very good work ",
+    "Rating":4
+   },
+    {
+        "id": 3,
+        "CustomerName": "SM Kesarvani",
+        "Review": "Outstanding service and beautiful decorations. ",
+        "Rating": 5
+    },
+    {
+        "id": 4,
+        "CustomerName": "Divyansh Inani",
+        "Review": "The decoration which I was neend that type of decoration I got it. Must try it ",
+        "Rating": 5
+    },
+    {
+        "id": 5,
+        "CustomerName": "Siddhesh Patil",
+        "Review": "Very good work and decoration is awesome. ",
+        "Rating": 5
+    }
+
+]

@@ -3,18 +3,21 @@
     "id": 1,
     "title": "Grand Birthday Celebrations",
     "offer": "Starting with ₹799/-",
-    "link": "/categories/premium"
+    "link": "/categories/premium",
+    "bg": "#fff563"
   },
   {
     "id": 2,
     "title": "Make this valentine's more special with your valentine",
-    "offer": "Valentine's Day Special",
-    "link": "/categories/baby-shower"
+    "offer": "Room Decor Special",
+    "link": "/categories/baby-shower",
+    "bg":"#ffc2c2"
   },
   {
     "id": 3,
-    "title": "Make Your Baby's Day Special",
-    "offer": "First Birthday ₹1999",
-    "link": "/categories/anniversary"
+    "title": "Make Your Baby's Day more Special",
+    "offer": "Baby welcome decor", 
+    "link": "/categories/baby-welcome",
+    "bg": "#c2f0ff"
   }
 ]
