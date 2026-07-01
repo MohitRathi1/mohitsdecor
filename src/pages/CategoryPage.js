@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
   const stars = '★'.repeat(Math.floor(product.rating)) + '☆'.repeat(5 - Math.floor(product.rating));
 
   return (
-    <div className="col-6 col-md-4 col-lg-3 mb-4">
+    <div className="col-6 col-md-4 col-lg-3 mb-3 mb-md-4">
       <Link to={`/product/${product.id}`} className="text-decoration-none text-dark">
         <div
           className="card h-100 border-0 rounded-4 overflow-hidden shadow-sm"
@@ -93,18 +93,18 @@ const CategoryPage = () => {
   const title = isAll ? 'All Decorations' : category.name;
 
   return (
-    <div className="container my-5">
-      <div className="mb-4">
+    <div className="container my-3 my-md-5 px-3 px-md-4">
+      <div className="mb-3 mb-md-4">
         <Link to="/" className="text-muted text-decoration-none small">
           ← Back to Home
         </Link>
-        <h2 className="fw-bold mt-2 mb-1">{title}</h2>
+        <h2 className="fw-bold mt-2 mb-1" style={{ fontSize: 'clamp(1.4rem, 5vw, 2rem)' }}>{title}</h2>
         <p className="text-muted mb-0">
           {products.length} decoration{products.length !== 1 ? 's' : ''} available
         </p>
       </div>
 
-      <div className="row">
+      <div className="row g-2 g-md-4">
         {products.length > 0 ? (
           products.map(product => (
             <ProductCard key={product.id} product={product} />
