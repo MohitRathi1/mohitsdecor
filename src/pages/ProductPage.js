@@ -152,9 +152,16 @@ const ProductPage = () => {
                     </div>
                     
                     <div className="d-flex align-items-center gap-3 my-3">
-                        <span className="h3 fw-bold mb-0">₹{product.price}</span>
-                        <span className="text-muted text-decoration-line-through">₹{product.originalPrice}</span>
-                        <span className="badge bg-success">{product.discount}</span>
+                        {/* if price is 0 then remove  */}
+                        {product.price !== 0 && (
+                            <span className="h3 fw-bold mb-0">₹{product.price}</span>
+                        )}
+                        {product.originalPrice !== 0 && (
+                            <span className="text-muted text-decoration-line-through">₹{product.originalPrice}</span>
+                        )}
+                        {product.discount && (
+                            <span className="badge bg-success">{product.discount}</span>
+                        )}
                     </div>
 
                     <div className="card border-0 bg-light mb-4">

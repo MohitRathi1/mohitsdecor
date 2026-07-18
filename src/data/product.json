@@ -2,6 +2,7 @@
     {
         "id": 1,
         "name": "Grand Birthday Celebration Decoration",
+        "description": "Perfect for a grand birthday celebration with this stunning decoration set.",
         "category": "Birthday Decoration, Hotel Decoration, First Birthday Decoration, Canopy Decoration",
         "price": 1999,
         "originalPrice": 2500,
@@ -22,6 +23,7 @@
     {
         "id": 2,
         "name": "Outdoor Balloon Decor",
+        "description": "Perfect for outdoor events with this vibrant balloon decoration set.",
         "category": "Canopy Decoration, Birthday Decoration, Anniversary Decoration, Party Decor",
         "price": 1499,
         "originalPrice": 1999,
@@ -39,6 +41,7 @@
     {
         "id": 3,
         "name": "Red Room Decor",
+        "description": "Transform your room with this elegant red-themed decoration set.",
         "category": "Birthday Decoration, Hotel Decor, First Birthday Decor, Canopy Decoration",
         "price": 1199,
         "originalPrice": 2500,
@@ -58,6 +61,7 @@
     {
         "id": 4,
         "name": "Baby Boy Welcome Decoration",
+        "description": "Celebrate the arrival of your baby boy with this charming welcome decoration set.",
         "category": "Baby Welcome Decoration, Welcome Baby Decor",
         "price": 1799,
         "originalPrice": 2299,
@@ -178,6 +182,7 @@
     {
         "id": 10,
         "name": "Luxury Canopy Balloon Ceiling",
+        
         "category": "Canopy Decoration, Birthday Decoration, Anniversary Decoration, Hotel Decoration",
         "price": 3499,
         "originalPrice": 4499,
@@ -193,6 +198,72 @@
             "LED String Lights Integrated",
             "Custom Color Theme Available",
             "Professional 2-Hour Setup Included"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Mascot Gorila Decoration",
+        "description": "Life-size Mascot Gorila Costume with Professional Performer",
+        "category": "Mascots Gorila, Panda, Tatya vinchu",
+        "price": 0,
+        "originalPrice": 0,
+        "discount": "15% off",
+        "rating": 4.7,
+        "duration": "2 hours",
+        "reviews": 110,
+        "imageFolder": "11",
+        "imagesCount": 3,
+        "details": [
+            "Life-size Mascot Gorila Costume with Professional Performer",
+            "Book according to your event timing",
+            "Rates will be according to the event duration",
+            "Includes Headpiece and Full Body Suit",
+            "Perfect for Birthday Parties and Events",
+            "Customizable Accessories Available"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Mascot Panda Decoration",
+        "description": "Life-size Mascot Panda Costume with Professional Performer",
+        "category": "Mascots Gorila, Panda, Tatya vinchu",
+        "price": 0,
+        "originalPrice": 0,
+        "discount": "15% off",
+        "rating": 4.8,
+        "duration": "2 hours",
+        "reviews": 95,
+        "imageFolder": "12",
+        "imagesCount": 3,
+        "details": [
+            "Life-size Mascot Panda Costume with Professional Performer",
+            "Book according to your event timing",
+            "Rates will be according to the event duration",
+            "Includes Headpiece and Full Body Suit",
+            "Perfect for Birthday Parties and Events",
+            "Customizable Accessories Available"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Mascot Tatya Vinchu Decoration",
+        "description": "Life-size Mascot Tatya Vinchu Costume with Professional Performer",
+        "category": "Mascots Gorila, Panda, Tatya vinchu",
+        "price": 0,
+        "originalPrice": 0,
+        "discount": "10% off",
+        "rating": 4.6,
+        "duration": "2 hours",
+        "reviews": 80,
+        "imageFolder": "13",
+        "imagesCount": 3,
+        "details": [
+            "Life-size Mascot Tatya Vinchu Costume with Professional Performer",
+            "Book according to your event timing",
+            "Rates will be according to the event duration",
+            "Includes Headpiece and Full Body Suit",
+            "Perfect for Birthday Parties and Events",
+            "Customizable Accessories Available"
         ]
     }
 ]

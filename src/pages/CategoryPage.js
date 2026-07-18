@@ -8,8 +8,8 @@ const ProductCard = ({ product }) => {
   const stars = '★'.repeat(Math.floor(product.rating)) + '☆'.repeat(5 - Math.floor(product.rating));
 
   return (
-    <div className="col-6 col-md-4 col-lg-3 mb-3 mb-md-4">
-      <Link to={`/product/${product.id}`} className="text-decoration-none text-dark">
+<div className="col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mb-md-4">
+        <Link to={`/product/${product.id}`} className="text-decoration-none text-dark">
         <div
           className="card h-100 border-0 rounded-4 overflow-hidden shadow-sm"
           style={{ transition: 'transform 0.2s, box-shadow 0.2s' }}
@@ -38,12 +38,23 @@ const ProductCard = ({ product }) => {
             <h6 className="fw-bold mb-2 lh-sm" style={{ fontSize: '0.85rem', minHeight: '2.4em' }}>
               {product.name}
             </h6>
+            {product.description && (
+              <p className="text-muted mb-2" style={{ fontSize: '0.85rem' }}>
+                {product.description}
+              </p>
+            )}
+{/* if price is 0 then remove price and discount too  */}
 
-            <div className="d-flex align-items-center flex-wrap gap-1 mb-1">
-              <span className="fw-bold" style={{ fontSize: '1rem' }}>₹{product.price}</span>
-              <span className="text-muted text-decoration-line-through" style={{ fontSize: '0.78rem' }}>
-                ₹{product.originalPrice}
-              </span>
+             <div className="d-flex align-items-center flex-wrap gap-1 mb-1">
+              {product.price !== 0 && (
+                <span className="fw-bold" style={{ fontSize: '1rem' }}>₹{product.price}</span>
+              )}
+              {product.originalPrice !== 0 && (
+                <span className="text-muted text-decoration-line-through" style={{ fontSize: '0.78rem' }}>
+                  ₹{product.originalPrice}
+                </span>
+              )}
+              
               <span className="badge bg-success" style={{ fontSize: '0.65rem' }}>
                 {product.discount}
               </span>
@@ -91,6 +102,7 @@ const CategoryPage = () => {
     : productsData.filter(p => category.Products.includes(p.id));
 
   const title = isAll ? 'All Decorations' : category.name;
+  const description = isAll ? 'Explore all our decorations' : category.Description || '';
 
   return (
     <div className="container my-3 my-md-5 px-3 px-md-4">
@@ -99,8 +111,9 @@ const CategoryPage = () => {
           ← Back to Home
         </Link>
         <h2 className="fw-bold mt-2 mb-1" style={{ fontSize: 'clamp(1.4rem, 5vw, 2rem)' }}>{title}</h2>
+        {description && <p className="text-muted mb-2" style={{ fontSize: '0.9rem', fontStyle: 'italic', fontFamily: 'Arial, sans-serif' }}>{description}</p>}
         <p className="text-muted mb-0">
-          {products.length} decoration{products.length !== 1 ? 's' : ''} available
+          {products.length} {products.length !== 1 ? '' : ''} available
         </p>
       </div>
 

@@ -96,6 +96,7 @@ const Home = () => {
             </Link>
           ))}
         </section>
+        
 
         <div className="section-header">
           <h2>Trending Videos</h2>
