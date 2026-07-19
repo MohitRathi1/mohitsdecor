@@ -47,6 +47,7 @@ const Home = () => {
               className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
               style={{ backgroundColor: item.bg || '#ffe6f0' }}
             >
+              
               <img
                 src={`/img/carousel/${item.id}.png`}
                 alt={item.title}
@@ -74,28 +75,52 @@ const Home = () => {
           <p>Welcome the little one with decor as sweet as the moment!</p>
         </div>
 
-        <section className="categories-grid">
-          {categories.map((cat) => (
-            <Link
-              to={`/categoryid/${cat.id}`}
-              key={cat.id}
-              className="category-card"
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              <div className="category-image-wrapper">
-                <img
-                  src={`/img/categories/${cat.id}.jpg`}
-                  alt={cat.name}
-                  onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=Category'; }}
-                />
-                <div className="category-card-overlay">
-                  <ChevronRight className="cat-arrow" size={16} />
-                </div>
-              </div>
-              <span className="category-name">{cat.name}</span>
-            </Link>
-          ))}
-        </section>
+       <section className="categories-grid">
+  {categories.map((cat) => (
+    <Link
+      to={`/categoryid/${cat.id}`}
+      key={cat.id}
+      className="category-card"
+      style={{ textDecoration: 'none', color: 'inherit' }}
+    >
+      {/* Container clips everything inside a clean circle */}
+      <div className="category-image-wrapper position-relative" style={{ borderRadius: '50%', overflow: 'hidden' }}>
+        
+        <img
+          src={`/img/categories/${cat.id}.jpg`}
+          alt={cat.name}
+          style={{ borderRadius: '50%', objectFit: 'cover', width: '100%', height: '100%' }}
+          onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=Category'; }}
+        />
+        
+        {/* Adjusted placement: Lowered slightly and pulled right to follow the inner circle curve perfectly */}
+        {cat.Tag && (
+          <span 
+            className="position-absolute badge rounded-pill bg-success shadow-sm d-inline-flex align-items-center justify-content-center"
+            style={{ 
+              bottom: '18px',         /* Moved down further so it clears the extreme top edge */
+              left: '50%',        /* Want to make it center horizontally */
+              transform: 'translateX(-50%)', /* Fine-tune horizontal centering */
+              zIndex: 99, 
+              fontSize: '10px',    /* Slightly smaller font to keep long text looking neat */
+              padding: '4px 8px',
+              whiteSpace: 'nowrap',
+              lineHeight: '1'
+            }}
+          >
+            {cat.Tag}
+          </span>
+        )}
+        
+        <div className="category-card-overlay" style={{ borderRadius: '50%', zIndex: 5 }}>
+          <ChevronRight className="cat-arrow" size={16} />
+        </div>
+      </div>
+      
+      <span className="category-name">{cat.name}</span>
+    </Link>
+  ))}
+</section>
         
 
         <div className="section-header">

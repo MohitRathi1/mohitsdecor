@@ -1,11 +1,11 @@
 [
-  { "id": 1, "name": "Birthday Decorations", "Products": [10, 1, 2] },
-  { "id": 2, "name": "Canopy Decorations", "Products": [5] },
-  { "id": 3, "name": "Room Decorations ", "Products": [8] },
-  { "id": 4, "name": "Anniversary Decorations", "Products": [6] },
-  { "id": 5, "name": "Temple Decorations", "Products": [4] },
-  { "id": 6, "name": "Kids Decorations", "Products": [7] },
-  { "id": 7, "name": "Ferwale Decorations", "Products": [3] },
-  { "id": 9, "name": "Baby Welcome Decorations", "Products": [4] },
-  {"id":10, "name": "Mascots Gorila, Panda, Tatya vinchu","Description": "Kolhapur cha Gorila By Quality Events", "Products": [11, 12, 13]}
+  {"id":1, "name": "Mascots Gorila, Panda, Tatya vinchu","Description": "Kolhapur cha Gorila By Quality Events","Tag":"New Arrivals", "Products": [11, 12, 13]},
+  { "id": 2, "name": "Birthday Decorations", "Products": [10, 1, 2] },
+  { "id": 3, "name": "Canopy Decorations", "Products": [5] },
+  { "id": 4, "name": "Room Decorations ", "Products": [8] },
+  { "id": 5, "name": "Anniversary Decorations", "Products": [6] },
+  { "id": 6, "name": "Temple Decorations", "Products": [4] },
+  { "id": 7, "name": "Kids Decorations", "Products": [7] },
+  { "id": 8, "name": "Ferwale Decorations", "Products": [3] },
+  { "id": 9, "name": "Baby Welcome Decorations", "Products": [4] }
 ]

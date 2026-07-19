@@ -182,7 +182,7 @@
     {
         "id": 10,
         "name": "Luxury Canopy Balloon Ceiling",
-        
+        "description": "Create a stunning ceiling display with this luxury balloon canopy.",
         "category": "Canopy Decoration, Birthday Decoration, Anniversary Decoration, Hotel Decoration",
         "price": 3499,
         "originalPrice": 4499,
@@ -202,7 +202,7 @@
     },
     {
         "id": 11,
-        "name": "Mascot Gorila Decoration",
+        "name": "Mascot Gorila ",
         "description": "Life-size Mascot Gorila Costume with Professional Performer",
         "category": "Mascots Gorila, Panda, Tatya vinchu",
         "price": 0,
@@ -224,7 +224,7 @@
     },
     {
         "id": 12,
-        "name": "Mascot Panda Decoration",
+        "name": "Mascot Panda ",
         "description": "Life-size Mascot Panda Costume with Professional Performer",
         "category": "Mascots Gorila, Panda, Tatya vinchu",
         "price": 0,
@@ -246,7 +246,7 @@
     },
     {
         "id": 13,
-        "name": "Mascot Tatya Vinchu Decoration",
+        "name": "Mascot Tatya Vinchu ",
         "description": "Life-size Mascot Tatya Vinchu Costume with Professional Performer",
         "category": "Mascots Gorila, Panda, Tatya vinchu",
         "price": 0,
