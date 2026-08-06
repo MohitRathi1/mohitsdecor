@@ -1,7 +1,6 @@
 .footer {
   background: linear-gradient(135deg, #dbeafe 0%, #ffffff 50%, #fce7f3 100%);
-  border-top: 1px solid #e5e7eb;
-  margin-top: 48px;
+  margin-top: 0;
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -18,7 +17,7 @@
   font-family: 'Dancing Script', cursive;
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(to right, #60a5fa, #c084fc, #be185d);
+  background: linear-gradient(to right, #60fa74, #c084fc, #be7618);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -100,7 +99,6 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid #e5e7eb;
   text-align: center;
   padding: 16px 24px;
   font-size: 0.8rem;
