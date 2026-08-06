@@ -6,7 +6,7 @@ import categories from '../data/categories.json';
 import videoData from '../data/trending_videos.json';
 import { Link } from 'react-router-dom';
 
-const cyclingWords = ['Shower', 'Welcome', 'First Birthday'];
+const cyclingWords = ['Independence', 'Birthday', 'Freedom'];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -49,7 +49,7 @@ const Home = () => {
             >
               
               <img
-                src={`/img/carousel/${item.id}.png`}
+                src={`/img/carousel/${item.id}.webp`}
                 alt={item.title}
                 className="hero-image"
                 onError={(e) => { e.target.src = 'https://via.placeholder.com/1200x400?text=Banner+Image'; }}
@@ -66,13 +66,13 @@ const Home = () => {
 
         <div className="section-title-group">
           <h1>
-            <span className="title-gradient-text">Baby </span>
+            <span className="title-gradient-text">Happy </span>
             <span className={`cycling-word ${wordVisible ? 'word-visible' : 'word-hidden'}`}>
               {cyclingWords[wordIndex]}
             </span>
-            <span className="title-gradient-text"> Specials</span>
+            <span className="title-gradient-text"> Day </span>
           </h1>
-          <p>Welcome the little one with decor as sweet as the moment!</p>
+          <p>Celebrate this special day with pride of <span className="title-gradient-text">Trie</span> colors!</p>
         </div>
 
        <section className="categories-grid">
