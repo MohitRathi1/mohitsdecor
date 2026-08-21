@@ -7,10 +7,10 @@
   --primary-red: #e11d48; /* Main Romantic Red */
   --secondary-pink: #fb7185; /* Light Pink */
   --accent-dark-red: #9f1239; /* Deep Crimson */
-  --bg-gradient-top: #ebffec;
-  --bg-gradient-bottom: #fff8e6;
-  --Baby-boy:#93fdac;
-  --Baby-girl:#f9e1a8;
+  --bg-gradient-top: #ebf6ff;
+  --bg-gradient-bottom: #e8e6ff;
+  --Baby-boy:#93cffd;
+  --Baby-girl:#a8f9a9;
 }
 .hero-subtitle {
   font-size: 1.2rem;
@@ -201,7 +201,7 @@
 
 .title-gradient-text,
 .cycling-word {
-  background: linear-gradient(to right, #03a500, #e3e3e3, #ffc30d);
+  background: linear-gradient(to right, #0073a5, #d1cb14, #8a0dff);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

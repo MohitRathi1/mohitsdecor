@@ -265,5 +265,44 @@
             "Perfect for Birthday Parties and Events",
             "Customizable Accessories Available"
         ]
+    },
+    {
+        "id":14,
+        "name": "Krishna Janmashtami Special Decoration",
+        "description": "Celebrate the birth of Lord Krishna with this special Janmashtami decoration set.",
+        "category": "Janmashtami Decoration, Festival Decoration, Religious Decoration",
+        "price": 2999,
+        "originalPrice": 3999,
+        "discount": "25% off",
+        "rating": 4.9,
+        "reviews": 200,
+        "imageFolder": "14",
+        "imagesCount": 3,
+        "details": [
+            "Colorful Balloon Garland with Peacocks and Flute Props",
+            "Elegant Throne and Diya Decorations",
+            "Traditional Music and Dance Setup"
+        ]
+    },
+    {
+        "id":15,
+        "name": "Pride of Trie Colors Decoration",
+        "description": "Indipendance Day or Republic Day Special Decoration decoraation for shop to celebrate the pride of our nation with vibrant colors and festive decor.",
+        "category": "Independence Day Decoration, Republic Day Decoration, Festival Decoration",
+        "price": 1999,
+        "originalPrice": 2499,
+        "discount": "20% off",
+        "rating": 4.8,
+        "reviews": 180,
+        "imageFolder": "15",
+        "imagesCount": 3,
+        "details": [
+            "Three colors balloon garland representing the national flag",
+            "Patriotic Bunting and Streamers",
+            "Inside shop bunches of trie colors balloons ",
+            "Trie color pilars made up of balloons",
+            "Above information may differ based on the shop size and area, contact us for more details"
+        ]
+
     }
 ]

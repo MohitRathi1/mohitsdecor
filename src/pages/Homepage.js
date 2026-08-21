@@ -6,7 +6,7 @@ import categories from '../data/categories.json';
 import videoData from '../data/trending_videos.json';
 import { Link } from 'react-router-dom';
 
-const cyclingWords = ['Independence', 'Birthday', 'Freedom'];
+const cyclingWords = ['Krishna Janmashtami', 'Birthday', 'Anniversary'];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -70,9 +70,8 @@ const Home = () => {
             <span className={`cycling-word ${wordVisible ? 'word-visible' : 'word-hidden'}`}>
               {cyclingWords[wordIndex]}
             </span>
-            <span className="title-gradient-text"> Day </span>
           </h1>
-          <p>Celebrate this special day with pride of <span className="title-gradient-text">Trie</span> colors!</p>
+          <p> Celebrating Born day of loard  Krishna!</p>
         </div>
 
        <section className="categories-grid">

@@ -7,5 +7,6 @@
   { "id": 6, "name": "Temple Decorations", "Products": [4] },
   { "id": 7, "name": "Kids Decorations", "Products": [7] },
   { "id": 8, "name": "Ferwale Decorations", "Products": [3] },
-  { "id": 9, "name": "Baby Welcome Decorations", "Products": [4] }
+  { "id": 9, "name": "Baby Welcome Decorations", "Products": [4] },
+  { "id": 10, "name": "Festiv Special ", "Products": [14,15] }
 ]
