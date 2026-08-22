@@ -71,7 +71,7 @@ const Home = () => {
               {cyclingWords[wordIndex]}
             </span>
           </h1>
-          <p> Celebrating Born day of loard  Krishna!</p>
+          <p> Celebrating Born day of lord  Krishna!</p>
         </div>
 
        <section className="categories-grid">
