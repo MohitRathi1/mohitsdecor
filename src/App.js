@@ -2,6 +2,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { Analytics } from '@vercel/analytics/react';
 import Home from "./pages/Homepage.js";
 import Navbar from "./components/Navbar.js";
 import Footer from "./components/Footer.js";
@@ -31,6 +32,7 @@ export default function App() {
             <Router>
                 <Layout />
             </Router>
+            <Analytics />
         </HelmetProvider>
     );
 }
