@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.1",
     "@testing-library/user-event": "^13.5.0",
+    "@vercel/analytics": "^2.0.1",
     "bootstrap": "^5.3.8",
     "fs": "^0.0.1-security",
     "lucide-react": "^0.562.0",
@@ -19,7 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-  "gen:models": "node script/generate-3d-models.mjs",
+    "gen:models": "node script/generate-3d-models.mjs",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
