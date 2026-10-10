@@ -6,7 +6,7 @@ import categories from '../data/categories.json';
 import videoData from '../data/trending_videos.json';
 import { Link } from 'react-router-dom';
 
-const cyclingWords = ['Krishna Janmashtami', 'Birthday', 'Anniversary'];
+const cyclingWords = [' Dussehra', 'Birthday', 'Anniversary'];
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -71,7 +71,7 @@ const Home = () => {
               {cyclingWords[wordIndex]}
             </span>
           </h1>
-          <p> Celebrating Born day of lord  Krishna!</p>
+          <p>Celebrate every occasion with Mohit's Decor!</p>
         </div>
 
        <section className="categories-grid">
