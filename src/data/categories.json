@@ -1,5 +1,5 @@
 [
-  {"id":1, "name": "Mascots Gorila, Panda, Tatya vinchu","Description": "Kolhapur cha Gorila By Quality Events","Tag":"New Arrivals", "Products": [11, 12, 13]},
+  {"id":1, "name": "Mascots Gorila, Panda, Tatya vinchu","Description": "Kolhapur cha Gorila By Quality Events", "Products": [11, 12, 13]},
   { "id": 2, "name": "Birthday Decorations", "Products": [10, 1, 2] },
   { "id": 3, "name": "Canopy Decorations", "Products": [5] },
   { "id": 4, "name": "Room Decorations ", "Products": [8] },
