@@ -6,12 +6,8 @@ import categories from '../data/categories.json';
 import videoData from '../data/trending_videos.json';
 import { Link } from 'react-router-dom';
 
-const cyclingWords = [' Dussehra', 'Birthday', 'Anniversary'];
-
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [wordIndex, setWordIndex] = useState(0);
-  const [wordVisible, setWordVisible] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -20,22 +16,11 @@ const Home = () => {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWordVisible(false);
-      setTimeout(() => {
-        setWordIndex((prev) => (prev + 1) % cyclingWords.length);
-        setWordVisible(true);
-      }, 400);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="page-wrapper">
-      <div className="balloons-container">
+      <div className="diwali-lights" aria-hidden="true">
         {[...Array(10)].map((_, i) => (
-          <div key={i} className="balloon"></div>
+          <span key={i} className="diya-light"></span>
         ))}
       </div>
 
@@ -67,11 +52,9 @@ const Home = () => {
         <div className="section-title-group">
           <h1>
             <span className="title-gradient-text">Happy </span>
-            <span className={`cycling-word ${wordVisible ? 'word-visible' : 'word-hidden'}`}>
-              {cyclingWords[wordIndex]}
-            </span>
+            <span className="diwali-word">Diwali</span>
           </h1>
-          <p>Celebrate every occasion with Mohit's Decor!</p>
+          <p>Light up your celebrations with Mohit's Decor.</p>
         </div>
 
        <section className="categories-grid">

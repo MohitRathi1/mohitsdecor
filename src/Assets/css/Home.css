@@ -1,16 +1,13 @@
-/* Variables for Valentine's Red Theme */
 :root {
-  --white: #ffffff;
-  --text-main: #1f2937;
-  --text-muted: #6b7280;
+  --white: #fffaf0;
+  --text-main: #382418;
+  --text-muted: #796754;
   --green-whatsapp: #22c55e;
-  --primary-red: #e11d48; /* Main Romantic Red */
-  --secondary-pink: #fb7185; /* Light Pink */
-  --accent-dark-red: #9f1239; /* Deep Crimson */
-  --bg-gradient-top: #ebf6ff;
-  --bg-gradient-bottom: #e8e6ff;
-  --Baby-boy:#93cffd;
-  --Baby-girl:#a8f9a9;
+  --primary-red: #b83b1e;
+  --secondary-pink: #e7a52e;
+  --accent-dark-red: #6c1d16;
+  --bg-gradient-top: #fff5df;
+  --bg-gradient-bottom: #fbe8cc;
 }
 .hero-subtitle {
   font-size: 1.2rem;
@@ -27,15 +24,15 @@
 
 .page-wrapper {
   min-height: 100vh;
-  background: linear-gradient(90deg, var(--bg-gradient-top) 0%, #ffffff 50%, var(--bg-gradient-bottom) 100%);
+  background: linear-gradient(115deg, var(--bg-gradient-top) 0%, #fffaf0 48%, var(--bg-gradient-bottom) 100%);
   font-family: 'Quicksand', sans-serif;
   color: var(--text-main);
   position: relative;
   overflow-x: hidden;
 }
 
-/* --- BALLOON ANIMATION --- */
-.balloons-container {
+/* --- FLOATING DIYAS --- */
+.diwali-lights {
   position: fixed;
   top: 0;
   left: 0;
@@ -45,34 +42,40 @@
   z-index: 1;
 }
 
-.balloon {
+.diya-light {
   position: absolute;
   bottom: -100px;
   width: 30px;
-  height: 40px;
-  background: var(--Baby-boy);
-  border-radius: 50%;
-  opacity: 0.5;
+  height: 15px;
+  background: linear-gradient(180deg, #e7a52e, #b83b1e);
+  border-radius: 4px 4px 50% 50%;
+  box-shadow: 0 0 18px rgba(231, 165, 46, 0.38);
+  opacity: 0.42;
   animation: floatUp 15s linear infinite;
 }
 
-/* Different sizes and colors for variety */
-.balloon:nth-child(2n) { 
-  /* using both colors */
-  background: var(--Baby-girl); 
-  width: 40px; 
-  height: 50px; 
+.diya-light::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -11px;
+  width: 8px;
+  height: 12px;
+  background: #ffe39a;
+  border-radius: 50% 50% 50% 0;
+  box-shadow: 0 0 12px rgba(255, 204, 91, 0.7);
+  transform: translateX(-50%) rotate(45deg);
 }
 
-/* Staggered positions and delays */
-.balloon:nth-child(1) { left: 10%; animation-delay: 0s; }
-.balloon:nth-child(2) { left: 25%; animation-delay: 3s; }
-.balloon:nth-child(3) { left: 40%; animation-delay: 7s; }
-.balloon:nth-child(4) { left: 55%; animation-delay: 2s; }
-.balloon:nth-child(5) { left: 70%; animation-delay: 5s; }
-.balloon:nth-child(6) { left: 85%; animation-delay: 8s; }
-.balloon:nth-child(7) { left: 15%; animation-delay: 10s; }
-.balloon:nth-child(8) { left: 45%; animation-delay: 4s; }
+.diya-light:nth-child(2n) { width: 38px; height: 18px; }
+.diya-light:nth-child(1) { left: 10%; animation-delay: 0s; }
+.diya-light:nth-child(2) { left: 25%; animation-delay: 3s; }
+.diya-light:nth-child(3) { left: 40%; animation-delay: 7s; }
+.diya-light:nth-child(4) { left: 55%; animation-delay: 2s; }
+.diya-light:nth-child(5) { left: 70%; animation-delay: 5s; }
+.diya-light:nth-child(6) { left: 85%; animation-delay: 8s; }
+.diya-light:nth-child(7) { left: 15%; animation-delay: 10s; }
+.diya-light:nth-child(8) { left: 45%; animation-delay: 4s; }
 
 @keyframes floatUp {
   0% { transform: translateY(0) rotate(0deg); opacity: 0; }
@@ -83,7 +86,7 @@
 
 /* --- HEADER --- */
 .main-header {
-  background: var(--white);
+  background: rgba(255, 250, 240, 0.96);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -103,7 +106,7 @@
   font-family: 'Dancing Script', cursive;
   font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(to right, var(--primary-red), var(--secondary-pink), var(--accent-dark-red));
+  background: linear-gradient(to right, var(--accent-dark-red), var(--secondary-pink), var(--primary-red));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -201,7 +204,7 @@
 
 .title-gradient-text,
 .cycling-word {
-  background: linear-gradient(to right, #0073a5, #d1cb14, #8a0dff);
+  background: linear-gradient(to right, var(--accent-dark-red), #e7a52e, var(--primary-red));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -214,20 +217,9 @@
   color: var(--text-muted);
 }
 
-.cycling-word {
+.diwali-word {
   display: inline-block;
-  transition: opacity 0.4s ease, transform 0.4s ease;
   vertical-align: middle;
-}
-
-.word-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.word-hidden {
-  opacity: 0;
-  transform: translateY(-10px);
 }
 
 /* --- CATEGORIES --- */
@@ -311,7 +303,7 @@
 .product-tag {
   position: absolute;
   top: 8px; left: 8px;
-  background: var(--accent-dark-red);
+  background: var(--primary-red);
   color: white;
   font-size: 10px;
   padding: 2px 8px;
