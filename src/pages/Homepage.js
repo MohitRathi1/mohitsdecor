@@ -7,7 +7,7 @@ import videoData from '../data/trending_videos.json';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
-const homeTitle = "New Year, Birthday & Diwali Decor | Mohit's Decor";
+const homeTitle = "New Year, Birthday, Anniversary, Baby Shower & Welcome Decor | Mohit's Decor";
 const homeDescription = "Plan a celebration with New Year party decorations, birthday decor, baby welcome and baby shower setups, and festive Diwali decor from Mohit's Decor in Ichalkaranji, Maharashtra.";
 const whatsappMessage = "Hi Mohit's Decor! I'm planning a celebration. Please share your birthday, baby welcome, baby shower, New Year and festive decoration options and pricing.";
 
