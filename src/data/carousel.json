@@ -1,23 +1,23 @@
 [
   {
     "id": 1,
-    "title": "Grand Birthday Celebrations",
-    "offer": "Starting with ₹799/-",
+    "title": "Make birthdays unforgettable",
+    "offer": "Birthday Decor Starting at ₹799",
     "link": "/categories/premium",
-    "bg": "#fff563"
+    "bg": "#f8e7c2"
   },
   {
     "id": 4,
-    "title": "Starting with ₹999/-",
-    "offer": "Diwali Special Decor for Shops ",
-    "link": "/categories/independence-day",
-    "bg":"#ffc2c2"
+    "title": "Celebrate the year ahead in style",
+    "offer": "New Year Balloon Decor",
+    "link": "/category",
+    "bg": "#f5e5c4"
   },
   {
     "id": 3,
-    "title": "Make Your Baby's Day more Special",
-    "offer": "Baby welcome decor", 
-    "link": "/categories/baby-welcome",
-    "bg": "#c2f0ff"
+    "title": "Welcome your little one with a beautiful setup",
+    "offer": "Baby Welcome & Shower Decor",
+    "link": "/categoryid/9",
+    "bg": "#e6f1f5"
   }
 ]

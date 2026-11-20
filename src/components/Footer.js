@@ -4,6 +4,8 @@ import { Heart } from 'lucide-react';
 import '../Assets/css/Footer.css';
 
 const Footer = () => {
+  const whatsappMessage = "Hi Mohit's Decor! I'm planning a celebration. Please share your birthday, baby welcome, baby shower, New Year and festive decoration options and pricing.";
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -16,7 +18,7 @@ const Footer = () => {
           <p className="footer-tagline">Make your party more colorful</p>
         </div>
           <a
-            href="https://wa.me/+918208239407"
+            href={`https://wa.me/918208239407?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="footer-whatsapp-btn"
@@ -30,20 +32,19 @@ const Footer = () => {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/category">All Decorations</Link></li>
-            <li><Link to="/categoryid/1">Birthday Decor</Link></li>
+            <li><Link to="/categoryid/2">Birthday Decor</Link></li>
             <li><Link to="/categoryid/9">Baby Welcome</Link></li>
-            <li><Link to="/categoryid/4">Anniversary Decor</Link></li>
+            <li><Link to="/categoryid/9">Baby Shower Decor</Link></li>
           </ul>
         </div>
 
         <div className="footer-links">
           <h4 className="footer-heading">Categories</h4>
           <ul>
-            <li><Link to="/categoryid/2">Canopy Decorations</Link></li>
-            <li><Link to="/categoryid/3">Room Decorations</Link></li>
-            <li><Link to="/categoryid/5">Temple Decorations</Link></li>
+            <li><Link to="/categoryid/3">Canopy Decorations</Link></li>
+            <li><Link to="/categoryid/4">Room Decorations</Link></li>
             <li><Link to="/categoryid/6">Kids Decorations</Link></li>
-            <li><Link to="/categoryid/7">Farewell Decorations</Link></li>
+            <li><Link to="/categoryid/8">Farewell Decorations</Link></li>
           </ul>
         </div>
 

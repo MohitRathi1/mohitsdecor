@@ -31,10 +31,9 @@ const ProductPage = () => {
 
     // Handle WhatsApp Customization Enquiry
     const handleWhatsAppCustomization = () => {
-        const phoneNumber = "+918208239407"; // Ensure country code is included
-        const currentUrl ="https://mohitsdecor.vercel.app/product/" + id;
-        const message = `Hello Mohit's Decor! I am interested in this %0ADecor: ${product.name}%0A%0A ${currentUrl}`;
-        window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        const phoneNumber = "918208239407";
+        const message = `Hi Mohit's Decor! I'm interested in the ${product.name}. Please share availability, customization options and pricing for my event. ${currentUrl}`;
+        window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
     };
 
     // Handle Native Share (WhatsApp/Socials)

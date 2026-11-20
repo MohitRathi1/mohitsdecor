@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import categoriesData from '../data/categories.json';
 import productsData from '../data/product.json';
 
@@ -103,8 +104,19 @@ const CategoryPage = () => {
 
   const title = isAll ? 'All Decorations' : category.name;
   const description = isAll ? 'Explore all our decorations' : category.Description || '';
+  const seoTitle = `${title} | Mohit's Decor`;
+  const categoryUrl = `https://mohitsdecor.vercel.app${isAll ? '/category' : `/categoryid/${category.id}`}`;
 
   return (
+    <>
+    <Helmet>
+      <title>{seoTitle}</title>
+      <meta name="description" content={description} />
+      <meta property="og:title" content={seoTitle} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={categoryUrl} />
+      <link rel="canonical" href={categoryUrl} />
+    </Helmet>
     <div className="container my-3 my-md-5 px-3 px-md-4">
       <div className="mb-3 mb-md-4">
         <Link to="/" className="text-muted text-decoration-none small">
@@ -129,6 +141,7 @@ const CategoryPage = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

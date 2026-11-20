@@ -1,12 +1,12 @@
 [
-  {"id":1, "name": "Mascots Gorila, Panda, Tatya vinchu","Description": "Kolhapur cha Gorila By Quality Events", "Products": [11, 12, 13]},
-  { "id": 2, "name": "Birthday Decorations", "Products": [10, 1, 2] },
+  {"id":1, "name": "Mascots Gorilla, Panda & Tatya Vinchu","Description": "Mascot appearances for celebrations and special events.", "Products": [11, 12, 13]},
+  { "id": 2, "name": "Birthday Decorations", "Description": "Birthday party decorations, balloon backdrops and celebration setups.", "Products": [10, 1, 2, 8] },
   { "id": 3, "name": "Canopy Decorations", "Products": [5] },
   { "id": 4, "name": "Room Decorations ", "Products": [8] },
   { "id": 5, "name": "Anniversary Decorations", "Products": [6] },
   { "id": 6, "name": "Temple Decorations", "Products": [4] },
   { "id": 7, "name": "Kids Decorations", "Products": [7] },
   { "id": 8, "name": "Ferwale Decorations", "Products": [3] },
-  { "id": 9, "name": "Baby Welcome Decorations", "Products": [4] },
-  { "id": 10, "name": "Festiv Special ", "Products": [14,15] }
+  { "id": 9, "name": "Baby Welcome & Baby Shower Decorations", "Description": "Celebrate a new arrival with baby welcome home and baby shower decorations.", "Products": [7, 9] },
+  { "id": 10, "name": "Festive Decorations", "Description": "Explore festival decorations for Janmashtami and national celebrations. Looking for Diwali decor in Ichalkaranji? Contact Mohit's Decor to discuss a custom festive setup.", "Products": [14,15] }
 ]

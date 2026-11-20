@@ -5,6 +5,11 @@ import carouselData from '../data/carousel.json';
 import categories from '../data/categories.json';
 import videoData from '../data/trending_videos.json';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+
+const homeTitle = "New Year, Birthday & Diwali Decor | Mohit's Decor";
+const homeDescription = "Plan a celebration with New Year party decorations, birthday decor, baby welcome and baby shower setups, and festive Diwali decor from Mohit's Decor in Ichalkaranji, Maharashtra.";
+const whatsappMessage = "Hi Mohit's Decor! I'm planning a celebration. Please share your birthday, baby welcome, baby shower, New Year and festive decoration options and pricing.";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,9 +23,18 @@ const Home = () => {
 
   return (
     <div className="page-wrapper">
-      <div className="diwali-lights" aria-hidden="true">
+      <Helmet>
+        <title>{homeTitle}</title>
+        <meta name="description" content={homeDescription} />
+        <meta property="og:title" content={homeTitle} />
+        <meta property="og:description" content={homeDescription} />
+        <meta property="og:url" content="https://mohitsdecor.vercel.app/" />
+        <meta name="twitter:title" content={homeTitle} />
+        <meta name="twitter:description" content={homeDescription} />
+      </Helmet>
+      <div className="celebration-confetti" aria-hidden="true">
         {[...Array(10)].map((_, i) => (
-          <span key={i} className="diya-light"></span>
+          <span key={i} className="confetti-piece"></span>
         ))}
       </div>
 
@@ -51,10 +65,10 @@ const Home = () => {
 
         <div className="section-title-group">
           <h1>
-            <span className="title-gradient-text">Happy </span>
-            <span className="diwali-word">Diwali</span>
+            <span className="title-gradient-text">New Year </span>
+            <span className="celebration-word">Decor</span>
           </h1>
-          <p>Light up your celebrations with Mohit's Decor.</p>
+          <p>Welcome the New Year with joyful decor, and find the perfect setup for birthdays, baby welcomes and baby showers.</p>
         </div>
 
        <section className="categories-grid">
@@ -106,7 +120,7 @@ const Home = () => {
         
 
         <div className="section-header">
-          <h2>Trending Videos</h2>
+    <h2>Celebration Inspiration</h2>
           <button className="view-all-btn">View All <ChevronRight size={16} /></button>
         </div>
 
@@ -141,7 +155,13 @@ const Home = () => {
         </section>
       </main>
 
-      <a href="https://wa.me/+918208239407" className="whatsapp-float">
+      <a
+        href={`https://wa.me/918208239407?text=${encodeURIComponent(whatsappMessage)}`}
+        className="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Ask Mohit's Decor about celebration decorations on WhatsApp"
+      >
         <svg viewBox="0 0 24 24" className="whatsapp-icon">
           <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.025 3.204l-.651 2.316 2.437-.64c.915.514 1.946.786 2.956.786 3.18 0 5.767-2.587 5.768-5.769 0-3.181-2.587-5.763-5.767-5.763zm3.526 8.2c-.146.411-.848.784-1.164.827-.315.044-.63.076-1.74-.361-.433-.171-1.025-.436-1.718-1.024-1.127-.958-1.841-2.122-2.01-2.408-.17-.286-.017-.439.123-.579.126-.127.283-.329.424-.494.14-.166.188-.283.283-.472.094-.188.047-.353-.024-.494-.07-.141-.637-1.532-.872-2.098-.228-.551-.459-.476-.63-.485-.164-.008-.353-.01-.542-.01s-.494.07-.753.353c-.26.283-.99 1.011-.99 2.47s1.059 2.87 1.2 3.059c.142.19 2.083 3.181 5.046 4.462.705.305 1.255.487 1.683.623.708.226 1.352.194 1.861.118.567-.085 1.738-.711 1.983-1.398.247-.687.247-1.275.172-1.398-.073-.124-.27-.197-.565-.343z"/>
         </svg>
